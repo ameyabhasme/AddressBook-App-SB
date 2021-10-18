@@ -1,12 +1,10 @@
 package com.blz.addressbook.dto;
 
-public class ContactDTO {
+import lombok.ToString;
+
+public @ToString class ContactDTO {
 
 	public String firstName;
 	public String lastName;
 
-	@Override
-	public String toString() {
-		return "firstName=" + firstName + ", lastName=" + lastName;
-	}
 }
