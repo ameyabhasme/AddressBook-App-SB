@@ -2,6 +2,8 @@ package com.blz.addressbook.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,7 +44,7 @@ public class AddressBookController {
 	}
 	
 	@PostMapping("/post")
-	public ResponseEntity<ResponseDTO> post(@RequestBody ContactDTO contactDTO){
+	public ResponseEntity<ResponseDTO> post(@Valid @RequestBody ContactDTO contactDTO){
 		Contact contact = null;
 		contact = addressBookService.post(contactDTO);
 		ResponseDTO responseDTO = new ResponseDTO("POST call successful", contact);
@@ -50,7 +52,7 @@ public class AddressBookController {
 	}
 	
 	@PutMapping("/put/{id}")
-	public ResponseEntity<ResponseDTO> put(@PathVariable ("id") int id, @RequestBody ContactDTO contactDTO){
+	public ResponseEntity<ResponseDTO> put(@Valid @PathVariable ("id") int id, @RequestBody ContactDTO contactDTO){
 		Contact contact = null;
 		contact = addressBookService.put(id, contactDTO);	
 		ResponseDTO responseDTO = new ResponseDTO("PUT call successful", contact);
