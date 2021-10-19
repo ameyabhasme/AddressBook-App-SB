@@ -23,4 +23,10 @@ public class AddressBookExceptionHandler {
 		ResponseDTO responseDTO = new ResponseDTO(message, errMsg);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
 	}
+	
+	@ExceptionHandler(CustomExceptions.class)
+	public ResponseEntity<ResponseDTO> handleEmployeePayrollException(CustomExceptions exception) {
+		ResponseDTO responseDTO = new ResponseDTO(message, exception.getMessage());
+		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
+	}
 }
