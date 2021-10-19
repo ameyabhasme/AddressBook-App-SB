@@ -13,6 +13,7 @@ public class AddressBookApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(AddressBookApplication.class, args);
 		log.info("Running Successfully!! In {} Environment", context.getEnvironment().getProperty("environment"));
+		log.info("AddressBook Service username is {}", context.getEnvironment().getProperty("spring.datasource.username"));
 	}
 
 }
