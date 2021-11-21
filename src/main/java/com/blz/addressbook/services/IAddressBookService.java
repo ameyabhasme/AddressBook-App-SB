@@ -11,9 +11,9 @@ public interface IAddressBookService {
 
 	Contact getById(int id);
 
-	Contact post(ContactDTO contactDTO);
+	Contact postContact(ContactDTO contactDTO);
 
-	Contact put(int id, ContactDTO contactDTO);
+	Contact putContact(int id, ContactDTO contactDTO);
 	
-	void delete(int id);
+	void deleteContact(int id);
 }
